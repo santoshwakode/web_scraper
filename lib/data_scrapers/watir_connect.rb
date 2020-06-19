@@ -1,13 +1,8 @@
-require 'watir'
-require 'pry'
+module DataScraper
 
-module WebScraper
-
-	class Scraper
+	class WatirConnect
 
 		attr_accessor :browser
-
-		browser = Watir::Browser.new
 
 		def initialize
 			@browser ||= Watir::Browser.new

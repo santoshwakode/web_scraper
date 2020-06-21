@@ -9,14 +9,8 @@ require 'active_record'
 require 'watir'
 
 require_relative 'db_connection'
-require_relative 'water'
+require_relative 'watir'
 
 Dir.glob(File.join('./app', '**', '*.rb'), &method(:require))
-
-puts "Data scarpping started"
- 
-ExtractData.new.get_data
-
-puts "Data scarpping ended"
 
 

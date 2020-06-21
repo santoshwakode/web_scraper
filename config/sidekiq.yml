@@ -1,0 +1,14 @@
+---
+:verbose: true
+:concurrency: 2
+production: &production
+  :pidfile: /www/rails/var/run/sidekiq.pid
+  :concurrency: 15
+development:
+  :pidfile: ./tmp/pids/sidekiq.pid
+  :logfile: ./log/sidekiq.log
+  :concurrency: 15
+qa:
+  <<: *production
+:queues:
+  - [default, 5]

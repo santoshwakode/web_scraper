@@ -1,5 +1,5 @@
 #Following are scheduler for crontab.
 
 data_extractor_job:
-  cron: "*/2 * * * *" #Every two min.
+  cron: "* * * * *" #Every two min.
   class: "DataExtractor"

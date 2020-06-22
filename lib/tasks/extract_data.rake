@@ -1,4 +1,5 @@
 require 'watir'
+require './app/models/scraper'
 
 namespace :extract_data do
   desc "Extract data from website"

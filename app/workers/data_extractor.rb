@@ -1,6 +1,5 @@
 require 'sidekiq'
 require 'rake'
-require 'active_record'
 
 load File.expand_path("../../../lib/tasks/extract_data.rake", __FILE__)
 Rake::Task.define_task(:environment)

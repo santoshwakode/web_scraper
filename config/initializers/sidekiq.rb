@@ -1,6 +1,13 @@
 require 'sidekiq'
 require 'sidekiq-cron'
 
+ def db_configuration
+    db_configuration_file = File.join(File.expand_path('./db' ), 'config.yml')
+    YAML.load(File.read(db_configuration_file))
+ end
+ 
+ActiveRecord::Base.establish_connection(db_configuration["development"])
+
 Sidekiq.configure_client do |config|
   config.redis = { size: 1 }
 end

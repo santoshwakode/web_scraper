@@ -3,8 +3,3 @@
 data_extractor_job:
   cron: "* * * * *" #Every two min.
   class: "DataExtractor"
-
-
-# data_storage_job:
-#   cron: "* * * * *" #Every two min.
-#   class: "DataStorage"  

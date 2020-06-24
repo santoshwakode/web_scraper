@@ -5,8 +5,8 @@ production: &production
   :pidfile: /www/rails/var/run/sidekiq.pid
   :concurrency: 15
 development:
-  :pidfile: ./tmp/pids/sidekiq.pid
-  :logfile: ./log/sidekiq.log
+  :pidfile: <%= File.join(File.expand_path('./tmp/pids' ), 'sidekiq.pid') %>
+  :logfile: <%= File.join(File.expand_path('./log' ), 'sidekiq.log') %>
   :concurrency: 15
 qa:
   <<: *production

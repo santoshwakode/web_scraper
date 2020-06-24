@@ -1,12 +1,7 @@
 
-Dir.glob(File.join('./app', '**', '*.rb'), &method(:require))
-
 ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile", __FILE__)
-
 require "bundler/setup" if File.exist?(ENV["BUNDLE_GEMFILE"])
 Bundler.require
-
-ENV["RACK_ENV"] ||= "development"
 
 module WebScraper
  class Application
@@ -15,7 +10,7 @@ module WebScraper
    end
 
    def self.env
-     @env ||= ENV["RAILS_ENV"] || ENV["RACK_ENV"] || ENV["ENV"] || "development"
+     @env ||= ENV["ENV"] || "development"
    end
 
    def self.logger
@@ -26,6 +21,7 @@ end
 
 require_relative "initializers/sidekiq"
 
+Dir.glob(File.join('./app', '**', '*.rb'), &method(:require))
 
 
 
